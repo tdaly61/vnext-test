@@ -18,6 +18,7 @@ cd platform-shared-tools
 git branch 
 sudo ./packages/installer/mini-loop/mini-loop-k8s.sh -m install -k k3s -v 1.27
 source ~/.bashrc
-export KUBECONFIG=$HOME/k3s.yaml
+#export KUBECONFIG=$HOME/k3s.yaml
+echo "KUBECONFIG is $KUBECONFIG"
 ./packages/installer/mini-loop/mini-loop-vnext.sh -m install_ml 
 
