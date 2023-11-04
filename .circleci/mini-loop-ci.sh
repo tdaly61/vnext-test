@@ -14,8 +14,9 @@ pwd
 echo "clone platform-shared-tools "
 git clone --branch k8s_working_br https://github.com/mojaloop/platform-shared-tools.git
 
-
+cd platform-shared-tools 
+git branch 
 sudo ./platform-shared-tools/packages/installer/mini-loop/mini-loop-k8s.sh -m install -k k3s -v 1.27
-
-./platform-shared-tools/packages/installer/mini-loop/mini-loop-vnext.sh -m install_ml 
+source ~/.bashrc
+./packages/installer/mini-loop/mini-loop-vnext.sh -m install_ml 
 
