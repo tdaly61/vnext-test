@@ -19,7 +19,7 @@ executors:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  say-hello:
+  mini-loop-k8s-ci:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     executor: default-machine
@@ -28,25 +28,19 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-      - run:
           name: "where am I "
           command: pwd 
       - run:
           name: "what is here"
-          command: ls -las 
+          command: ls -las       
       - run:
-          name: "what is under here"
-          command: ls -las          
-      - run:
-          name: run local shell script
+          name: run mini-loop deploy  
           no_output_timeout: 30m
-          command: chmod +x .circleci/*.sh && .circleci/tom.sh
+          command: chmod +x .circleci/*.sh && .circleci/mini-loop-ci.sh 
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  mini-loop:
     jobs:
-      - say-hello
+      - mini-loop-k8s-ci
