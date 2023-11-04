@@ -16,4 +16,4 @@ git clone --branch k8s_working_br https://github.com/mojaloop/platform-shared-to
 
 ls 
 
-sudo ./platform-shared-tools/packages/installer/mini-loop/mini-loop-k8s.sh -m install
+sudo ./platform-shared-tools/packages/installer/mini-loop/mini-loop-k8s.sh -m install -k k3s -v 1.27
