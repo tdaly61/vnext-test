@@ -16,7 +16,7 @@ git clone --branch k8s_working_br https://github.com/mojaloop/platform-shared-to
 
 cd platform-shared-tools 
 git branch 
-sudo ./platform-shared-tools/packages/installer/mini-loop/mini-loop-k8s.sh -m install -k k3s -v 1.27
+sudo ./packages/installer/mini-loop/mini-loop-k8s.sh -m install -k k3s -v 1.27
 source ~/.bashrc
 export KUBECONFIG=$HOME/k3s.yaml
 ./packages/installer/mini-loop/mini-loop-vnext.sh -m install_ml 
